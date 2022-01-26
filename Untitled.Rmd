@@ -1,0 +1,30 @@
+---
+title: "Map of my home"
+author: "Juan P. Alzate"
+date: "1/25/2022"
+output:   
+    html_document:
+        keep_md: TRUE
+---
+
+
+```{r, echo=FALSE}
+library(leaflet)
+```
+
+## Click to see more information about my home
+
+
+
+```{r, echo=FALSE}
+Site <- c("<a href='https://en.wikipedia.org/wiki/Medell%C3%ADn'>This is my House</a>")
+df <- data.frame(lat = 6.217,
+                 lng =-75.567 )
+
+df %>% 
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers(clusterOptions = markerClusterOptions(),popup = Site )
+```
+
+
